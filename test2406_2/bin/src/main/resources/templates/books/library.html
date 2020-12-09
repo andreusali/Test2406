@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr class="w3-blue">
+<th>Title</th>
+<th>ISBN</th>
+<th>Pages</th>
+<th>Year</th>
+<th>AuthorId</th>
+<th>Action</th>
+</tr>
+</thead>
+<tr th:each="book:${lib}">
+<td th:text="${book.title}"></td>
+<td th:text="${book.ISBN}"></td>
+<td th:text="${book.pages}"></td>
+<td th:text="${book.year}"></td>
+<td th:text="${book.authorid}"></td>
+
+<!-- <td th:text="${book.author}"></td> -->
+<td><a th:href="@{deleteBook(title=${book.title})}" class="w3-btn w3-teal">DELETE</a></td>
+
+</tr>
+</table>
+<form class="w3-container" action="newBook">
+<p>
+<button class="w3-btn w3-blue">Add Book</button>
+</p>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Quote</title>
+</head>
+<table >
+<thead>
+<tr >
+<th>Quote</th>
+<!-- <th>ISBN</th> -->
+<!-- <th>Pages</th> -->
+<!-- <th>Year</th> -->
+<!-- <th>Author Id</th> -->
+<!-- <th>Action</th> -->
+</tr>
+</thead>
+<tr th:each="book:${quotes}">
+<td th:text="${book.id}"></td>
+<td th:text="${book.quotestring}"></td>
+
+<td><a th:href="@{deleteBook(title=${book.id})}" >DELETE</a></td>
+</tr>
+
+</table>
+
+<!-- <div class="col-md-6"> -->
+<!--                     <label th:text="#{position}">Position</label> -->
+<!--                     <select th:field="*{auths}" class="form-control"> -->
+<!--                         <option th:each="autho : ${auths}" -->
+<!--                                 th:value="${autho.id}" -->
+<!--                                 th:text="${autho.name}"> -->
+<!--                         </option> -->
+<!--                     </select> -->
+<!--                 </div> -->
+
+
+
+<!-- <select th:field="*{positions}" class="form-control"> -->
+<!--                         <option th:each="position : *{positions}" -->
+<!--                                 th:value="${position}" -->
+<!--                                 th:text="${position.name}">Wireframe -->
+<!--                         </option> -->
+<!--                     </select> -->
+
+
+
+
+<form  action="addQuote">
+<p>
+<button >Add Quote</button>
+</p>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Book</title>
+</head>
+
+<h3>Create a new Book</h3>
+<!-- <form th:action="@{/add}" method="post"  th:object="${car}"> -->
+<form action="#" th:action="@{addBook}" th:object="${book}" method="post" th:required="required">
+
+
+<p>
+<label ><b>Title</b></label>
+<input th:field="*{title}" type="text">
+</p>
+
+<p>
+<label ><b>Isbn</b></label>
+<input th:field="*{isbn}" type="text">
+</p>
+
+<p>
+<label ><b>Pages</b></label>
+<input th:field="*{pages}" type="text">
+</p>
+
+<p>
+<label ><b>Year</b></label>
+<input th:field="*{year}" type="text">
+</p>
+
+
+<p>
+	<label for="stylelist">Quote</label>
+			<select id="stylelist" th:field="*{quote.id}">
+			<option th:each="au: ${quotes}" th:value="${au.id}" th:text="${au.quoteString}"></option>
+			</select>
+</p>
+
+<!-- <p> -->
+<!-- <input type="number" class="w3-input w3-border w3-light-grey" th:field="*{id}"> -->
+<!-- </p> -->
+
+
+<!-- <select class="w3-input w3-border w3-light-grey" th:field="*{author.id}"> -->
+<!--                 <option value="1">1</option> -->
+<!--                 <option value="2">2</option> -->
+<!--                 <option value="3">3</option> -->
+<!--                 <option value="4">4</option> -->
+<!-- </select> -->
+
+<!-- title -->
+<!-- <label for="categorylist">Author</label> -->
+<!--  <select id="authorlist" th:field="*{authorid}" class="w3-input w3-border w3-light-grey"> -->
+<!--        			<option th:each="auth: ${auths}" th:value="${auth.authorid}" th:text="${auth.name}"></option> -->
+<!-- </select> -->
+
+
+
+<p>
+<!-- <input type="submit" value="insertBook"></input> -->
+<button class="w3-btn w3-blue">Add</button>
+</p>
+
+
+</form>
+
+<!-- <table class="w3-table-all w3-hoverable"> -->
+<!-- <thead> -->
+<!-- <tr class="w3-blue"> -->
+<!-- <th>Author</th> -->
+<!-- <th>Name</th> -->
+<!-- </tr> -->
+<!-- </thead> -->
+<!-- <tr th:each="auth:${auths}"> -->
+<!-- <td th:text="${auth.id}"></td> -->
+<!-- <td th:text="${auth.name}"></td> -->
+
+
+<!-- </tr> -->
+<!-- </table> -->
+
+</body>
+</html>

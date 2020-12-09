@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Book</title>
+</head>
+<form class="w3-container" action="insertBook">
+<p>
+<label class="w3-text-blue"><b>Title</b></label>
+
+<input class="w3-input w3-border w3-light-grey" name="title" type="text">
+</p>
+<p>
+<label class="w3-text-blue"><b>ISBN</b></label>
+
+<input class="w3-input w3-border w3-light-grey" name="isbn" type="text">
+</p>
+<p>
+<label class="w3-text-blue"><b>Pages</b></label>
+<input class="w3-input w3-border w3-light-grey" name="pages" type="text">
+</p>
+<p>
+
+<label class="w3-text-blue"><b>Year</b></label>
+
+<input class="w3-input w3-border w3-light-grey" name="year" type="text">
+</p>
+
+<p>
+<label class="w3-text-blue"><b>Author</b></label>
+<input class="w3-input w3-border w3-light-grey" name="author.id" type="text">
+</p>
+
+
+<p>
+<button class="w3-btn w3-blue">Add</button>
+</p>
+</form>
+
+
+
+<table>
+<tr class="w3-blue">
+<th>name</th>
+<th>country</th>
+<th>age</th>
+</tr>
+
+<tr th:each="autho:${auths}">
+<td th:text="${autho.id}"></td>
+<td th:text="${autho.name}"></td>
+<td th:text="${autho.country}"></td>
+<td th:text="${autho.age}"></td>
+
+
+</tr>
+</table>
+
+
+
+    		
+<!--    <select id="categorylist" th:field="*{category}" class="form-control"> -->
+<!--       <option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option> -->
+<!--    </select> -->
+
+</body>
+</html>

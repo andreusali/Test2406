@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Quote</title>
+</head>
+
+<!-- <h3>Create a new Quote</h3> -->
+<!-- <form th:action="@{/add}" method="post"  th:object="${car}"> -->
+<!-- <form action="#" th:action="@{addQuote}" th:object="${quote}" method="post" th:required="required"> -->
+
+
+<!-- <p> -->
+<!-- <label ><b>Title</b></label> -->
+<!-- <input  th:field="*{title}" type="text"> -->
+<!-- </p> -->
+
+
+
+<!-- <p> -->
+<!-- 	<label for="stylelist">Author</label> -->
+<!-- 			<select id="stylelist" th:field="*{author.id}"> -->
+<!-- 			<option th:each="au: ${auths}" th:value="${au.id}" th:text="${au.name}"></option> -->
+<!-- 			</select> -->
+<!-- </p> -->
+
+
+<h3>Create a new Quote</h3>
+<!-- <form th:action="@{/add}" method="post"  th:object="${car}"> -->
+<form action="#" th:action="@{addQuote}" th:object="${quote}" method="post" th:required="required">
+<p>
+<label><b>Quote String</b></label>
+
+<input th:field="*{quotestring}" type="text">
+</p>
+
+
+
+<!-- <p> -->
+<!-- <input type="number" class="w3-input w3-border w3-light-grey" th:field="*{id}"> -->
+<!-- </p> -->
+
+
+<!-- <select class="w3-input w3-border w3-light-grey" th:field="*{author.id}"> -->
+<!--                 <option value="1">1</option> -->
+<!--                 <option value="2">2</option> -->
+<!--                 <option value="3">3</option> -->
+<!--                 <option value="4">4</option> -->
+<!-- </select> -->
+
+<!-- title -->
+<!-- <label for="categorylist">Author</label> -->
+<!--  <select id="authorlist" th:field="*{authorid}" class="w3-input w3-border w3-light-grey"> -->
+<!--        			<option th:each="auth: ${auths}" th:value="${auth.authorid}" th:text="${auth.name}"></option> -->
+<!-- </select> -->
+
+
+
+<p>
+<!-- <input type="submit" value="insertBook"></input> -->
+<button >Add Quote</button>
+</p>
+
+
+</form>
+
+<!-- <table class="w3-table-all w3-hoverable"> -->
+<!-- <thead> -->
+<!-- <tr class="w3-blue"> -->
+<!-- <th>Author</th> -->
+<!-- <th>Name</th> -->
+<!-- </tr> -->
+<!-- </thead> -->
+<!-- <tr th:each="auth:${auths}"> -->
+<!-- <td th:text="${auth.id}"></td> -->
+<!-- <td th:text="${auth.name}"></td> -->
+
+
+<!-- </tr> -->
+<!-- </table> -->
+
+</body>
+</html>
