@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.SpringH2.SpringH2.book.Book;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="QUOTE")
@@ -23,8 +25,9 @@ public class Quote {
 	public Long id;
 	public String quotestring;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 //	@JoinColumn(name = "authorid")
+	@JsonIgnore
 	public Book book;
 	
 	public Quote(Long id, String quotestring, Book book) {

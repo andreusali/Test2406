@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.SpringH2.SpringH2.quotes.Quote;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="BOOK")
@@ -32,8 +33,10 @@ public class Book {
 	public int pages;
 	public int year;
 	 
-	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //	, cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+	//(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Quote> quotes = new ArrayList<Quote>();
 	
 	public Book() {
