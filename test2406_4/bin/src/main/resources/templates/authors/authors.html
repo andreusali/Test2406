@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Authors</title>
+</head>
+<table class="w3-table-all w3-hoverable">
+<thead>
+<tr class="w3-blue">
+<th>Name</th>
+<th>Country</th>
+<th>Age</th>
+</tr>
+</thead>
+<tr th:each="author:${auth}">
+<td th:text="${author.name}"></td>
+<td th:text="${author.country}"></td>
+<td th:text="${author.age}"></td>
+<td><a th:href="@{deleteAuthor(name=${author.name})}" class="w3-btn w3-teal">DELETE</a></td>
+
+</tr>
+</table>
+<form class="w3-container" action="newAuthor">
+<p>
+<button class="w3-btn w3-blue">Add Author</button>
+</p>
+</form>
+
+
+
+
+</body>
+</html>

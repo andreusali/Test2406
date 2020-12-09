@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Quote</title>
+</head>
+
+<div class="w3-container w3-teal">
+  <h3>Library</h3>
+</div>
+
+
+<h3>Create a new Quote</h3>
+<!-- <form th:action="@{/add}" method="post"  th:object="${car}"> -->
+<form action="#" th:action="@{addQuote}" th:object="${quote}" method="post" th:required="required">
+<p>
+<label><b>Quote String</b></label>
+
+<input th:field="*{quotestring}" type="text">
+</p>
+
+
+<p>
+	<label for="stylelist">Book</label>
+			<select id="stylelist" th:field="*{book.id}">
+			<option th:each="au: ${books}" th:value="${au.id}" th:text="${au.title}"></option>
+			</select>
+</p>
+
+
+
+
+
+<p>
+<!-- <input type="submit" value="insertBook"></input> -->
+<button >Add Quote</button>
+</p>
+
+
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Book</title>
+</head>
+
+<div class="w3-container w3-teal">
+  <h3>Library</h3>
+</div>
+
+
+<h3>Create a new Book</h3>
+<!-- <form th:action="@{/add}" method="post"  th:object="${car}"> -->
+<form action="#" th:action="@{addBook}" th:object="${book}" method="post" th:required="required">
+
+
+<p>
+<label ><b>Title</b></label>
+<input th:field="*{title}" type="text">
+</p>
+
+<p>
+<label ><b>Isbn</b></label>
+<input th:field="*{isbn}" type="text">
+</p>
+
+<p>
+<label ><b>Pages</b></label>
+<input th:field="*{pages}" type="text">
+</p>
+
+<p>
+<label ><b>Year</b></label>
+<input th:field="*{year}" type="text">
+</p>
+
+
+<p>
+<!-- <input type="submit" value="insertBook"></input> -->
+<button >Add new Book</button>
+</p>
+
+
+</form>
+
+
+</body>
+</html>

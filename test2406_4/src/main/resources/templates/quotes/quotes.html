@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Quote</title>
+</head>
+
+<div class="w3-container w3-teal">
+  <h3>Library</h3>
+</div>
+
+
+<table >
+<thead>
+<tr >
+<th>Id</th>
+<th>Quote</th>
+
+</tr>
+</thead>
+<tr th:each="book:${quotes}">
+<td th:text="${book.id}"></td>
+<td th:text="${book.quotestring}"></td>
+
+<td><a th:href="@{deleteQuote(id=${book.id})}" >DELETE</a></td>
+</tr>
+
+</table>
+
+
+
+<form  action="addQuote">
+<p>
+<button >Add Quote</button>
+</p>
+</form>
+
+<table>
+<tr>
+<td><a th:href="@{/}">Home</a></td>
+</tr>
+</table>
+
+</body>
+</html>
